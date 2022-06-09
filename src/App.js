@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   return (
-    <span>Hello, App!</span>
+    <span>Criando PR pra ganhar a caneca</span>
   );
 }
 

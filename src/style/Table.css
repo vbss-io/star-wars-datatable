@@ -29,6 +29,6 @@ table {
   padding: 8px;
 }
 
-.planets tr:nth-child( even ){ background-color: #f2f2f2; }
+.planets tr:nth-child( even ) { background-color: #f2f2f2; }
 
 .planets tr:hover { background-color: #ddd; }

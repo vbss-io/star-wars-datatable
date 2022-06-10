@@ -5,15 +5,16 @@ table {
 
 .planets {
   border-collapse: collapse;
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto , sans-serif;
   font-size: 0.7rem;
   width: 80%;
 }
+
 .planets th {
-  background-color: #000000;
+  background-color: black;
   color: white;
-  padding-top: 12px;
   padding-bottom: 12px;
+  padding-top: 12px;
   text-align: center;
 }
 
@@ -24,10 +25,10 @@ table {
 }
 
 .planets td, .planets th {
-  border: 0.5px solid #000000;
+  border: 0.5px solid black;
   padding: 8px;
 }
 
-.planets tr:nth-child(even){background-color: #f2f2f2;}
+.planets tr:nth-child( even ){ background-color: #f2f2f2; }
 
-.planets tr:hover {background-color: #ddd;}
+.planets tr:hover { background-color: #ddd; }

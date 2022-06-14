@@ -1,10 +1,10 @@
 .name-filter {
-  width: 50%;
   border: 1px solid black;
   border-radius: 10px;
+  font-family: Roboto , sans-serif;
   font-size: 1em;
-  font-family: Roboto, sans-serif;
-  text-align: center;
-  padding: 5px;
   margin-bottom: 10px;
+  padding: 5px;
+  text-align: center;
+  width: 50%;
 }

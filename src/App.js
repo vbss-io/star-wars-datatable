@@ -1,32 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import MyContext from './helpers/MyContext';
-import Table from './components/Table';
+import React from 'react';
+import StarWarsData from './components/StarWarsData';
 import './App.css';
-
-function useFetchApi(defaultValue) {
-  const [data, setData] = useState(defaultValue);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    fetch('https://swapi-trybe.herokuapp.com/api/planets/')
-      .then((response) => response.json())
-      .then((dataAPI) => {
-        setData(dataAPI.results);
-        setLoading(false);
-      });
-  }, []);
-  return [data, loading];
-}
+import Provider from './context/Provider';
 
 function App() {
-  const [data, loading] = useFetchApi([]);
   return (
-    <MyContext.Provider value={ data }>
-      {loading
-        ? <span>Loading...</span>
-        : <Table />}
-    </MyContext.Provider>
+    <Provider>
+      <StarWarsData />
+    </Provider>
   );
 }
 

@@ -5,14 +5,7 @@ function NumbersInputs() {
   const [columnFilter, setColumnFilter] = useState('population');
   const [comparisonFilter, setComparisonFilter] = useState('maior que');
   const [inputNumberFilter, setInputNumberFilter] = useState(0);
-  const [columnsValues] = useState([
-    'population',
-    'orbital_period',
-    'diameter',
-    'rotation_period',
-    'surface_water',
-  ]);
-  const { setFilters } = useContext(StarWarsContext);
+  const { setFilters, columnsValues } = useContext(StarWarsContext);
 
   const handleColumnChange = ({ target }) => {
     setColumnFilter(target.value);

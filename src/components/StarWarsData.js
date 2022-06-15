@@ -5,6 +5,7 @@ import StarWarsContext from '../context/StarWarsContext';
 import Table from './Table';
 import TextInput from './TextInput';
 import NumbersInputs from './NumbersInputs';
+import AppliedFilters from './AppliedFilters';
 import SortInputs from './SortInputs';
 import '../App.css';
 import '../style/Filter-And-Sort.css';
@@ -15,8 +16,8 @@ function StarWarsData() {
   const planetsResult = useFilterPlanets();
 
   // useEffect(() => {
-  //   console.log(filters);
-  // }, [filters]);
+  //   console.log(filters.filterByNumber);
+  // }, [filters.filterByNumber]);
 
   if (error) {
     return (
@@ -34,6 +35,7 @@ function StarWarsData() {
         <NumbersInputs />
         <SortInputs />
       </div>
+      <AppliedFilters />
       {loading ? (
         <p>Loading...</p>
       ) : (

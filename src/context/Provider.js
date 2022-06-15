@@ -5,9 +5,16 @@ import StarWarsContext from './StarWarsContext';
 function Provider({ children }) {
   const [planets, setPlanets] = useState({});
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [nameFilter, setNameFilter] = useState('');
   const [numbersFilters, setNumbersFilters] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [columnsValues, setColumnsValues] = useState([
+    'population',
+    'orbital_period',
+    'diameter',
+    'rotation_period',
+    'surface_water',
+  ]);
   const [filters, setFilters] = useState({
     filterByName: {
       name: '',
@@ -28,6 +35,8 @@ function Provider({ children }) {
     setNumbersFilters,
     filters,
     setFilters,
+    columnsValues,
+    setColumnsValues,
   };
 
   return (

@@ -4,7 +4,7 @@ import '../style/TextInput.css';
 
 function TextInput() {
   const [text, setText] = useState('');
-  const { setNameFilter } = useContext(StarWarsContext);
+  const { setNameFilter, setFilters } = useContext(StarWarsContext);
 
   const handleChange = ({ target }) => {
     setText(target.value);
@@ -12,7 +12,13 @@ function TextInput() {
 
   useEffect(() => {
     setNameFilter(text);
-  }, [text, setNameFilter]);
+    setFilters((state) => ({
+      ...state,
+      filterByName: {
+        name: text,
+      },
+    }));
+  }, [text, setNameFilter, setFilters]);
 
   return (
     <input

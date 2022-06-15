@@ -4,19 +4,30 @@ import StarWarsContext from './StarWarsContext';
 
 function Provider({ children }) {
   const [planets, setPlanets] = useState({});
-  const [filterPlanets, setFilterPlanets] = useState({});
+  const [error, setError] = useState(null);
   const [nameFilter, setNameFilter] = useState('');
+  const [numbersFilters, setNumbersFilters] = useState({});
   const [loading, setLoading] = useState(true);
+  const [filters, setFilters] = useState({
+    filterByName: {
+      name: '',
+    },
+    filterByNumber: [],
+  });
 
   const starWarsContext = {
     planets,
     setPlanets,
+    error,
+    setError,
     loading,
     setLoading,
-    filterPlanets,
-    setFilterPlanets,
     nameFilter,
     setNameFilter,
+    numbersFilters,
+    setNumbersFilters,
+    filters,
+    setFilters,
   };
 
   return (

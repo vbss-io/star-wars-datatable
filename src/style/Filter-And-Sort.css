@@ -1,7 +1,6 @@
 .filter-and-sort {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: center;
   margin-bottom: 10px;
   margin-left: auto;
@@ -19,7 +18,7 @@
 }
 
 .filter-and-sort label {
-  font-family: Roboto, sans-serif;
+  font-family: Roboto , sans-serif;
   font-size: 1em;
   width: 100%;
 }

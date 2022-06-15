@@ -47,10 +47,10 @@ function NumbersInputs() {
   return (
     <div className="numbers-input">
       <form onSubmit={ handleNumbersFilter }>
-        <label htmlFor="column">
-          Coluna:
+        <label htmlFor="filter-column">
+          <strong>Coluna:</strong>
           <select
-            name="column"
+            id="filter-column"
             data-testid="column-filter"
             onChange={ handleColumnChange }
           >
@@ -69,9 +69,9 @@ function NumbersInputs() {
           </select>
         </label>
         <label htmlFor="comparison">
-          Operador:
+          <strong>Operador:</strong>
           <select
-            name="comparison"
+            id="comparison"
             data-testid="comparison-filter"
             onChange={ handleComparisonChange }
           >
@@ -86,6 +86,7 @@ function NumbersInputs() {
           data-testid="value-filter"
           value={ inputNumberFilter }
           onChange={ handleInputNumberChange }
+          min="0"
           required
         />
         <button type="submit" data-testid="button-filter">Filtrar</button>

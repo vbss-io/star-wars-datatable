@@ -25,7 +25,7 @@ function TextInput() {
       className="name-filter"
       type="text"
       data-testid="name-filter"
-      placeholder="Filter by name"
+      placeholder="Filtrar por Nome"
       value={ text }
       onChange={ handleChange }
     />

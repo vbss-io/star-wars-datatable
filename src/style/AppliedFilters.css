@@ -1,0 +1,43 @@
+.filters-tittle {
+  font-family: Roboto , sans-serif;
+  font-size: 1.0em;
+}
+
+.filters {
+  flex-flow: row wrap;
+  font-family: Roboto , sans-serif;
+  height: 25px;
+  margin-bottom: 10px;
+}
+
+.filters button {
+  border: 1px solid black;
+  border-radius: 20px;
+  font-family: Roboto , sans-serif;
+  height: 25px;
+  margin-left: 10px;
+  text-align: center;
+  transition: 0.3s;
+  width: 25px;
+}
+
+.filters button:hover {
+  background-color: red;
+  color: white;
+}
+
+.button-remove-filters {
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 1em;
+  margin-bottom: 20px;
+  padding: 5px;
+  text-align: center;
+  transition: 0.3s;
+  width: 180px;
+}
+
+.button-remove-filters:hover {
+  background-color: red;
+  color: white;
+}

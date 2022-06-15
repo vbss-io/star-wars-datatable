@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
+import '../style/AppliedFilters.css';
 
 function AppliedFilters() {
   const { filters, setFilters, setColumnsValues } = useContext(StarWarsContext);
@@ -41,9 +42,9 @@ function AppliedFilters() {
     <div>
       { haveFilters && (
         <div>
-          <p>Filtros Aplicados:</p>
+          <p className="filters-tittle"><strong>Filtros Aplicados:</strong></p>
           {filters.filterByNumber.map((filter) => (
-            <div key={ filter.column } data-testid="filter">
+            <div key={ filter.column } data-testid="filter" className="filters">
               {`${filter.column} 
               ${filter.comparison} 
               ${filter.number} `}
@@ -60,6 +61,7 @@ function AppliedFilters() {
             type="button"
             onClick={ handleRemoveAllFilters }
             data-testid="button-remove-filters"
+            className="button-remove-filters"
           >
             Remover Todos
           </button>

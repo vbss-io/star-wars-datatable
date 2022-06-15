@@ -1,11 +1,13 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
 
 function NumbersInputs() {
   const [columnFilter, setColumnFilter] = useState('population');
   const [comparisonFilter, setComparisonFilter] = useState('maior que');
   const [inputNumberFilter, setInputNumberFilter] = useState(0);
-  const { setFilters, columnsValues } = useContext(StarWarsContext);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+  const [buttonMessage, setButtonMessage] = useState('Adicionar filtro');
+  const { setFilters, columnsValues, filters } = useContext(StarWarsContext);
 
   const handleColumnChange = ({ target }) => {
     setColumnFilter(target.value);
@@ -37,6 +39,18 @@ function NumbersInputs() {
     setColumnFilter(columnsValues[0]);
   };
 
+  useEffect(() => {
+    const numberFilter = filters.filterByNumber.length;
+    const THREE = 3;
+    if (numberFilter === THREE) {
+      setButtonDisabled(true);
+      setButtonMessage('Limite de filtros atingido');
+    } else {
+      setButtonDisabled(false);
+      setButtonMessage('Adicionar filtro');
+    }
+  }, [filters.filterByNumber]);
+
   return (
     <div className="numbers-input">
       <form onSubmit={ handleNumbersFilter }>
@@ -47,11 +61,6 @@ function NumbersInputs() {
             data-testid="column-filter"
             onChange={ handleColumnChange }
           >
-            {/* <option value="population">population</option>
-            <option value="orbital_period">orbital_period</option>
-            <option value="diameter">diameter</option>
-            <option value="rotation_period">rotation_period</option>
-            <option value="surface_water">surface_water</option> */}
             {
               columnsValues.map((column) => (
                 <option key={ column } value={ column }>
@@ -82,7 +91,14 @@ function NumbersInputs() {
           min="0"
           required
         />
-        <button type="submit" data-testid="button-filter">Filtrar</button>
+        <button
+          type="submit"
+          data-testid="button-filter"
+          disabled={ buttonDisabled }
+          title={ buttonMessage }
+        >
+          Filtrar
+        </button>
       </form>
     </div>
   );

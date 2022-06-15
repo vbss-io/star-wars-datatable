@@ -56,7 +56,12 @@
   width: 100%;
 }
 
-.filter-and-sort button:hover {
+.filter-and-sort button:hover:enabled {
   background-color: black;
   color: white;
+}
+
+.filter-and-sort button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

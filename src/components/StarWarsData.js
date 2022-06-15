@@ -15,10 +15,6 @@ function StarWarsData() {
   useFetchApi();
   const planetsResult = useFilterPlanets();
 
-  // useEffect(() => {
-  //   console.log(filters.filterByNumber);
-  // }, [filters.filterByNumber]);
-
   if (error) {
     return (
       <p>

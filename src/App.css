@@ -1,5 +1,15 @@
+body {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
+
 .App {
   text-align: center;
+}
+
+#StarWarsDataTable {
+  padding-top: 20px;
 }
 
 .App h1 {

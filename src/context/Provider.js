@@ -21,6 +21,11 @@ function Provider({ children }) {
     },
     filterByNumber: [],
   });
+  const [orderSort, setOrderSort] = useState({
+    sortBy: 'name',
+    order: 'ASC',
+  });
+  const [isSortedByNumber, setIsSortedByNumber] = useState(false);
 
   const starWarsContext = {
     planets,
@@ -37,6 +42,10 @@ function Provider({ children }) {
     setFilters,
     columnsValues,
     setColumnsValues,
+    orderSort,
+    setOrderSort,
+    isSortedByNumber,
+    setIsSortedByNumber,
   };
 
   return (

@@ -1,0 +1,41 @@
+header {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+
+header div {
+  display: flex;
+  flex-direction: column;
+}
+
+header img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+header button {
+  background-color: yellow;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: Roboto , sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 10px;
+  text-align: center;
+  transition: 0.5s;
+  width: 300px;
+}
+
+header button:hover {
+  background-color: white;
+  color: black;
+  transition: 0.3s;
+}
+
+header a {
+  text-decoration: none;
+}

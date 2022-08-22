@@ -1,5 +1,7 @@
 import React, { useState, useContext } from 'react';
+import Container from 'react-bootstrap/Container';
 import StarWarsContext from '../context/StarWarsContext';
+import '../style/Filter-And-Sort.css';
 
 function SortInputs() {
   const [columnsValues] = useState([
@@ -31,13 +33,13 @@ function SortInputs() {
   };
 
   return (
-    <div className="numbers-input">
+    <Container className="filter-and-sort">
       <form onSubmit={ handleClickSort }>
         <label htmlFor="sort-column">
-          <strong>Coluna:</strong>
+          <strong>Ordenar por:</strong>
           <select
             id="sort-column"
-            data-testid="column-sort"
+            className="mb-2"
             onChange={ handleColumnChange }
           >
             {
@@ -57,7 +59,6 @@ function SortInputs() {
             onChange={ handleSortChange }
             value="ASC"
             checked={ orderToSort === 'ASC' }
-            data-testid="column-sort-input-asc"
           />
           Ascendente
         </label>
@@ -69,18 +70,18 @@ function SortInputs() {
             onChange={ handleSortChange }
             value="DES"
             checked={ orderToSort === 'DES' }
-            data-testid="column-sort-input-desc"
+            className="mb-3"
           />
           Descendente
         </label>
         <button
           type="submit"
-          data-testid="column-sort-button"
+          className="mb-3"
         >
           Ordenar
         </button>
       </form>
-    </div>
+    </Container>
   );
 }
 

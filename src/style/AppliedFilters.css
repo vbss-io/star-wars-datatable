@@ -4,21 +4,18 @@
 }
 
 .filters {
-  flex-flow: row wrap;
   font-family: Roboto , sans-serif;
-  height: 25px;
-  margin-bottom: 10px;
+  justify-content: center;
 }
 
 .filters button {
   border: 1px solid black;
-  border-radius: 20px;
+  border-radius: 10px;
   font-family: Roboto , sans-serif;
-  height: 25px;
   margin-left: 10px;
-  text-align: center;
   transition: 0.3s;
-  width: 25px;
+  width: 30px;
+  padding: 0 10px 1px 10px;
 }
 
 .filters button:hover {
@@ -28,13 +25,10 @@
 
 .button-remove-filters {
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 1em;
-  margin-bottom: 20px;
   padding: 5px;
-  text-align: center;
   transition: 0.3s;
-  width: 180px;
 }
 
 .button-remove-filters:hover {

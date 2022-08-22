@@ -1,11 +1,11 @@
 import React from 'react';
+import Table from 'react-bootstrap/Table';
 import PropTypes from 'prop-types';
-import '../style/Table.css';
 
-function Table({ planets }) {
+function PlanetsTable({ planets }) {
   return (
-    <table className="planets">
-      <thead>
+    <Table striped bordered hover size="sm" variant="dark" responsive>
+      <thead className="text-center align-middle">
         <tr>
           <th>Name</th>
           <th>Rotation Period</th>
@@ -22,30 +22,30 @@ function Table({ planets }) {
           <th>Url</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className="text-center align-middle">
         {planets.map((planet) => (
           <tr key={ planet.name }>
-            <td data-testid="planet-name">{ planet.name }</td>
-            <td>{ planet.rotation_period }</td>
-            <td>{ planet.orbital_period }</td>
-            <td>{ planet.diameter }</td>
-            <td>{ planet.climate }</td>
-            <td>{ planet.gravity }</td>
-            <td>{ planet.terrain }</td>
-            <td>{ planet.surface_water }</td>
-            <td>{ planet.population }</td>
-            <td>{ planet.films }</td>
-            <td>{ planet.created }</td>
-            <td>{ planet.edited }</td>
-            <td>{ planet.url }</td>
+            <td>{planet.name}</td>
+            <td>{planet.rotation_period}</td>
+            <td>{planet.orbital_period}</td>
+            <td>{planet.diameter}</td>
+            <td>{planet.climate}</td>
+            <td>{planet.gravity}</td>
+            <td>{planet.terrain}</td>
+            <td>{planet.surface_water}</td>
+            <td>{planet.population}</td>
+            <td>{planet.films}</td>
+            <td>{planet.created}</td>
+            <td>{planet.edited}</td>
+            <td>{planet.url}</td>
           </tr>
         ))}
       </tbody>
-    </table>
+    </Table>
   );
 }
 
-Table.propTypes = {
+PlanetsTable.propTypes = {
   planets: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     rotation_period: PropTypes.string.isRequired,
@@ -63,4 +63,4 @@ Table.propTypes = {
   })).isRequired,
 };
 
-export default Table;
+export default PlanetsTable;

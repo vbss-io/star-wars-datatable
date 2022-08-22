@@ -1,5 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
+import Container from 'react-bootstrap/Container';
 import StarWarsContext from '../context/StarWarsContext';
+import '../style/Filter-And-Sort.css';
 
 function NumbersInputs() {
   const [columnFilter, setColumnFilter] = useState('population');
@@ -52,14 +54,14 @@ function NumbersInputs() {
   }, [filters.filterByNumber]);
 
   return (
-    <div className="numbers-input">
+    <Container className="filter-and-sort">
       <form onSubmit={ handleNumbersFilter }>
         <label htmlFor="filter-column">
-          <strong>Coluna:</strong>
+          <strong>Filtrar por:</strong>
           <select
             id="filter-column"
-            data-testid="column-filter"
             onChange={ handleColumnChange }
+            className="mb-2"
           >
             {
               columnsValues.map((column) => (
@@ -74,8 +76,8 @@ function NumbersInputs() {
           <strong>Operador:</strong>
           <select
             id="comparison"
-            data-testid="comparison-filter"
             onChange={ handleComparisonChange }
+            className="mb-2"
           >
             <option value="maior que">maior que</option>
             <option value="menor que">menor que</option>
@@ -85,7 +87,7 @@ function NumbersInputs() {
         <input
           type="number"
           placeholder="Value"
-          data-testid="value-filter"
+          className="mb-2"
           value={ inputNumberFilter }
           onChange={ handleInputNumberChange }
           min="0"
@@ -93,14 +95,14 @@ function NumbersInputs() {
         />
         <button
           type="submit"
-          data-testid="button-filter"
+          className="mb-3"
           disabled={ buttonDisabled }
           title={ buttonMessage }
         >
           Filtrar
         </button>
       </form>
-    </div>
+    </Container>
   );
 }
 

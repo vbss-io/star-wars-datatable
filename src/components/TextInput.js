@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
+import Container from 'react-bootstrap/Container';
 import StarWarsContext from '../context/StarWarsContext';
 import '../style/TextInput.css';
 
@@ -21,14 +22,15 @@ function TextInput() {
   }, [text, setNameFilter, setFilters]);
 
   return (
-    <input
-      className="name-filter"
-      type="text"
-      data-testid="name-filter"
-      placeholder="Filtrar por Nome"
-      value={ text }
-      onChange={ handleChange }
-    />
+    <Container fluid className="text-center">
+      <input
+        className="name-filter w-75"
+        type="text"
+        placeholder="Filtrar por Nome"
+        value={ text }
+        onChange={ handleChange }
+      />
+    </Container>
   );
 }
 

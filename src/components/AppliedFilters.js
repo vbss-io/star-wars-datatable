@@ -1,4 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 import StarWarsContext from '../context/StarWarsContext';
 import '../style/AppliedFilters.css';
 
@@ -39,12 +41,15 @@ function AppliedFilters() {
   };
 
   return (
-    <div>
+    <Container fluid>
       { haveFilters && (
-        <div>
+        <Container className="w-100">
           <p className="filters-tittle"><strong>Filtros Aplicados:</strong></p>
           {filters.filterByNumber.map((filter) => (
-            <div key={ filter.column } data-testid="filter" className="filters">
+            <Row
+              className="filters mb-2"
+              key={ filter.column }
+            >
               {`${filter.column} 
               ${filter.comparison} 
               ${filter.number} `}
@@ -55,19 +60,20 @@ function AppliedFilters() {
               >
                 x
               </button>
-            </div>
+            </Row>
           ))}
-          <button
-            type="button"
-            onClick={ handleRemoveAllFilters }
-            data-testid="button-remove-filters"
-            className="button-remove-filters"
-          >
-            Remover Todos
-          </button>
-        </div>
+          <Row className="w-50 mx-auto mb-3">
+            <button
+              type="button"
+              onClick={ handleRemoveAllFilters }
+              className="button-remove-filters"
+            >
+              Remover Todos
+            </button>
+          </Row>
+        </Container>
       )}
-    </div>
+    </Container>
   );
 }
 

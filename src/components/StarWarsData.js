@@ -1,19 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Spinner from 'react-bootstrap/Spinner';
+import Button from 'react-bootstrap/Button';
 import useFetchApi from '../hooks/useFetchApi';
 import useFilterPlanets from '../hooks/useFilterPlanets';
 import useSortPlanets from '../hooks/useSortPlanets';
 import StarWarsContext from '../context/StarWarsContext';
-import Table from './Table';
+import PlanetsTable from './Table';
 import TextInput from './TextInput';
 import NumbersInputs from './NumbersInputs';
 import AppliedFilters from './AppliedFilters';
 import SortInputs from './SortInputs';
 import Header from './Header';
 import '../App.css';
-import '../style/Filter-And-Sort.css';
 
 function StarWarsData() {
   const { loading, error } = useContext(StarWarsContext);
+  const [showFilters, setShowFilter] = useState(false);
   useFetchApi();
   const planetsFiltered = useFilterPlanets();
   const planetsResult = useSortPlanets(planetsFiltered);
@@ -27,21 +32,42 @@ function StarWarsData() {
     );
   }
   return (
-    <div className="App">
+    <Container fluid>
       <Header />
       <h1 id="StarWarsDataTable">Star Wars Planets DataTable</h1>
       <TextInput />
-      <div className="filter-and-sort">
-        <NumbersInputs />
-        <SortInputs />
-      </div>
-      <AppliedFilters />
+      <Container className="text-center">
+        <Button
+          variant="outline-dark"
+          className="m-3 w-50 mx-auto"
+          type="button"
+          onClick={ () => setShowFilter(!showFilters) }
+        >
+          { showFilters ? 'Ocultar Filtros' : 'Mostrar Filtros' }
+        </Button>
+        {showFilters ? (
+          <Row className="w-75 mx-auto">
+            <Col>
+              <NumbersInputs />
+            </Col>
+            <Col>
+              <SortInputs />
+            </Col>
+          </Row>) : null }
+        <Row>
+          <AppliedFilters />
+        </Row>
+      </Container>
       {loading ? (
-        <p>Loading...</p>
+        <Container className="text-center align-middle p-5">
+          <Spinner animation="grow" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </Container>
       ) : (
-        <Table planets={ planetsResult } />
+        <PlanetsTable planets={ planetsResult } />
       )}
-    </div>
+    </Container>
   );
 }
 

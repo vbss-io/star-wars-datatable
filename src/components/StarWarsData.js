@@ -32,7 +32,7 @@ function StarWarsData() {
     );
   }
   return (
-    <Container fluid>
+    <Container fluid className="gx-0">
       <Header />
       <h1 id="StarWarsDataTable">Star Wars Planets DataTable</h1>
       <TextInput />

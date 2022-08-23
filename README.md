@@ -23,6 +23,9 @@ Star Wars DataTable é uma aplicação com informações sobre os planetas da fa
       - [**Ordenar Planetas**](#ordenar-planetas)
       - [**Filtros Aplicados**](#filtros-aplicados)
     - [**Tabela**](#tabela)
+- [**Instruções**](#instruções)
+    - [**Instalação**](#instalação)
+    - [**Execução**](#execução)
 - [**Linguagens e Ferramentas**](#linguagens-e-ferramentas)
     - [**React**](#react)
     - [**React Hooks**](#react-hooks)
@@ -30,9 +33,6 @@ Star Wars DataTable é uma aplicação com informações sobre os planetas da fa
     - [**Bootstrap**](#bootstrap)
     - [**Planets List API - Trybe**](#planets-list-api---trybe)
     - [**Linter**](#linter)
-- [**Instruções**](#instruções)
-    - [**Instalação**](#instalação)
-    - [**Execução**](#execução)
 - [**Observações**](#observações)
 
 # **Recursos Star Wars Data Table**
@@ -77,6 +77,23 @@ A tabela contém os planetas recebidos pela API e é dinâmica de acordo com as 
 ![Tabela](./readme-images/tabela.PNG)
 <b>Demo Tabela</b>
 
+# **Instruções**
+
+### **Instalação**
+
+Para rodar a aplicação localmente é necessário fazer a instalação das dependências utilizadas com o comando:
+
+```
+npm install
+```
+### **Execução**
+
+Depois de ter as dependências instaladas é possível executar o projeto localmente com o comando:
+
+```
+npm start
+```
+
 # **Linguagens e Ferramentas**
 
 `React` é o coração da aplicação, foi desenvolvida utilizando componentes funcionais, `Hooks` disponíveis pelo React e também customizados, o estado da aplicação foi gerido utilizando `Context API` e a estilização foi feita com `Bootstrap` e `CSS`
@@ -120,22 +137,15 @@ https://swapi-trybe.herokuapp.com/api/planets/
 
 Este projeto foi desenvolvido utilizando o linter `ESLint` seguindo as boas práticas definidas na [Trybe](https://www.betrybe.com/).
 
-# **Instruções**
+Para executar o Lint utilize o comando:
+````
+npm run lint
+````
 
-### **Instalação**
-
-Para rodar a aplicação localmente é necessário fazer a instalação das dependências utilizadas com o comando:
-
-```
-npm install
-```
-### **Execução**
-
-Depois de ter as dependências instaladas é possível executar o projeto localmente com o comando:
-
-```
-npm start
-```
+Para executar o StyleLint utilize o comando:
+````
+npm run lint:styles
+````
 
 # **Observações**
 

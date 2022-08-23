@@ -142,7 +142,7 @@ Para executar o Lint utilize o comando:
 npm run lint
 ````
 
-Para executar o StyleLint utilize o comando:
+Para executar o styleLint utilize o comando:
 ````
 npm run lint:styles
 ````
